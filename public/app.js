@@ -10,25 +10,29 @@ const formatDate = date => {
 };
 
 const onMessage = (data, cred) => {
-  const { time_mark: timeMark, id, nick, content } = data;
+  const { time_mark: timeMark, time, id, nick, author, content, msg } = data;
   const { nick: credNick } = cred;
-  const msgDate = formatDate(timeMark);
+  const msgTime = timeMark ?? time;
+  const msgFrom = nick ?? author;
+  const msgText = content ?? msg;
+
+  const msgDate = formatDate(msgTime);
   const currentDate = formatDate(new Date());
-  const date = new Date(timeMark); // 2009-11-10
-  const time = [date.getHours(), date.getMinutes()].map(oo).join(':');
+  const date = new Date(msgTime);
+  const HHMM = [date.getHours(), date.getMinutes()].map(oo).join(':');
 
   let Strtime;
   if (msgDate === currentDate) {
-    Strtime = 'Сегодня в ' + time;
+    Strtime = 'Сегодня в ' + HHMM;
   } else {
     const month = date.toLocaleString('default', { month: 'long' });
-    Strtime = `${oo(date.getDay())} ${month} ${date.getFullYear()}, в ${time}`;
+    Strtime = `${oo(date.getDay())} ${month} ${date.getFullYear()}, в ${HHMM}`;
   }
 
   $('#msg-container').append(`
-      <div class="msg-box" id='${id}' class="${nick === credNick ? '' : 'not-my'}">
-          <p class="author">${nick}</p>
-          <p class="msg-text">${content}</p>
+      <div class="msg-box" id='${id}' class="${msgFrom === credNick ? '' : 'not-my'}">
+          <p class="author">${msgFrom}</p>
+          <p class="msg-text">${msgText}</p>
           <span class="time">${Strtime}</span>
       </div>
   `);
