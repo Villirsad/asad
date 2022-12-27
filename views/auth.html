@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./style.css">
+	<title>Вход</title>
+</head>
+<body>
+<div class="container">
+		<div class="wrapper">
+            <div class="wrapper-form" id="login-form">
+                <h3>Добро пожаловать!</h3>
+                <form id="login">
+                    <div class="row">
+                        <label for="nick">Логин</label>
+                        <input type="text" id="nick" name="nick" placeholder="Введите свой логин">
+                    </div>
+                    <div class="row">
+                        <label for="pass">Пароль</label>
+                        <input type="password" id="pass" name="pass" placeholder="Введите свой пароль">
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" id="submit-login" type="submit">Войти</button>
+                    </div>
+                </form>
+                <div class="change" id="toreg">
+                    <div class="extra">Нет аккаунта?</div>
+                    <div>Зарегистрироваться</div>
+                </div>
+            </div>
+            <div class="wrapper-form" id="reg-form">
+                <h3>Зарегистрироваться</h3>
+                <form id="reg">
+                    <div class="row">
+                        <label for="nick">Логин</label>
+                        <input type="text" id="nickname" name="nick">
+                    </div>
+                    <div class="row">
+                        <label for="pass">Пароль</label>
+                        <input type="password" id="password" name="pass">
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" id="submit-reg" type="submit">Регистрация</button>
+                    </div>
+                </form>
+                <div class="change" id="tolog">
+                    <div class="extra">Есть аккаунт?</div>
+                    <div>Войти</div>
+                </div>
+            </div>
+        </div>
+	</div>
+</body>
+<script src="./check.js"></script>
+<script src="./auth.js"></script>
+</html>

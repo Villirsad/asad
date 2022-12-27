@@ -1,0 +1,57 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-image: url('./images/fone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h3{
+    color: #fff;
+}
+.author{
+    color: lightslategray;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+label{
+    color: #b9bbbe;
+    padding-left: 0px !important;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.btn-primary{
+    background-color: #5865f2;
+    font-weight: 600;
+}
+.time{
+    color: lightslategray;
+    font-size: 9px;
+}
+.msg-box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 15px gray;
+    width:fit-content;
+    padding: 2%;
+    margin-top: 25px;
+    background-color: #fff;
+}
+.msg-text{
+    position: relative;
+    white-space:break-spaces;
+    font-size: 0.8rem;
+}
+p{
+    margin-bottom: 5px;
+}
+
+.return{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
